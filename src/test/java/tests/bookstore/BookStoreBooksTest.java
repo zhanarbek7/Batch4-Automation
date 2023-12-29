@@ -1,8 +1,8 @@
 package tests.bookstore;
 
+import org.junit.AfterClass;
+import org.junit.Test;
 import org.openqa.selenium.JavascriptExecutor;
-import org.testng.annotations.AfterClass;
-import org.testng.annotations.Test;
 import pages.demoQABooks.BookPage;
 import pages.demoQABooks.BookStoreBooksPage;
 import utilities.Config;
@@ -14,7 +14,7 @@ public class BookStoreBooksTest {
     BookStoreBooksPage booksPage = new BookStoreBooksPage(Driver.getDriver());
 
 
-    @Test(groups = "smoke")
+    @Test
     public void add1stBookToCollection() throws InterruptedException {
         Driver.getDriver().get(Config.getValue("demoQA.bookstore.url")+"login");
         booksPage.usernameBox.sendKeys(Config.getValue("demoQA.bookstore.username"));
